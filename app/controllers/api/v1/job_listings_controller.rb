@@ -27,6 +27,7 @@ class Api::V1::JobListingsController < ApplicationController
             else
                 render json: {
                     message: "Couldn't create job listing, try again",
+                    errors: company.errors.full_messages,
                     status: 400
                 }
             end
@@ -77,7 +78,7 @@ class Api::V1::JobListingsController < ApplicationController
     private
     
     def job_listings_params
-        params.require(:job_listing).permit(:title, :description, :phone_number, :company_id)
+        params.permit(:title, :description, :phone_number)
     end
 
 end
