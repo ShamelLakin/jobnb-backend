@@ -70,6 +70,7 @@ class Api::V1::JobListingsController < ApplicationController
             job_listing.destroy
             render json: {
                 job_listing: JobListingSerializer.new(job_listing).serializable_hash,
+                message: "Job listing deleted",
                 status: 200
             }
         end
