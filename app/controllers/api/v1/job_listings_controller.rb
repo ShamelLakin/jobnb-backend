@@ -79,7 +79,7 @@ class Api::V1::JobListingsController < ApplicationController
     private
     
     def job_listings_params
-        params.permit(:title, :description, :phone_number)
+        params.permit(:title, :description, :phone_number, :company_name)
     end
 
 end
