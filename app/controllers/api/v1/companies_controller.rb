@@ -16,7 +16,7 @@ class Api::V1::CompaniesController < ApplicationController
             }
         else
             render json: {
-                message: "Couldn't create company, try again"
+                error: company.errors.full_messages.to_sentence
             }
         end
     end
